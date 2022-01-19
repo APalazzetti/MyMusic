@@ -6,15 +6,12 @@ public class Brano {
 
 
     private String titolo;
-
-
-
     private String genere;
     private String autore;
     private String durata;
-    private Date datapu;
+    private String datapu;
 
-    public Brano(){
+    public Brano(String titolo, String genere, String autore, String durata){
         this.titolo =titolo;
         this.genere =genere;
         this.autore =autore;
@@ -51,11 +48,11 @@ public class Brano {
         return durata;
     }
 
-    public Date getDatapu() {
+    public String getDatapu() {
         return datapu;
     }
 
-    public void setDatapu(Date datapu) {
+    public void setDatapu(String datapu) {
         this.datapu = datapu;
     }
 }

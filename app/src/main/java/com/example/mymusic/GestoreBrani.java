@@ -7,11 +7,7 @@ public class GestoreBrani {
     public GestoreBrani(){
         listaBrani = new ArrayList<Brano>();
     }
-    public void addBrano(){
-        Brano b = new Brano();
+    public void addBrano(Brano b){
         listaBrani.add(b);
-
-
-
     }
 }

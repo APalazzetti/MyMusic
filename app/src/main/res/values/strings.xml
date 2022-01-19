@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyMusic</string>
+
+    <string-array name="gen">
+        <item>hip hop</item>
+        <item>rap</item>
+        <item>pop</item>
+        <item>drill</item>
+    </string-array>
 </resources>
