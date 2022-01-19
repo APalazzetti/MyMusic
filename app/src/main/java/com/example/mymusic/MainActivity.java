@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     Spinner spnGenere;
     EditText txtTitolo, txtDurata, txtAutore;
     GestoreBrani gb;
+    ArrayAdapter<String> a;
+    String[] generi ={"Pop","Trap","Rap","Drill"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         txtDurata=(EditText)findViewById(R.id.txtDurata);
         txtAutore=(EditText)findViewById(R.id.txtAutore);
         spnGenere=(Spinner)findViewById(R.id.genere);
+        a= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,generi);
+
+        spnGenere.setAdapter(a);
 
         gb=new GestoreBrani();
 
@@ -43,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
 }
