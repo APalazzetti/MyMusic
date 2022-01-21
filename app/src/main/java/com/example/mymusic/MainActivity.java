@@ -2,6 +2,7 @@ package com.example.mymusic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     GestoreBrani gb;
     ArrayAdapter<String> a;
     String[] generi ={"Pop","Trap","Rap","Drill"};
+    Brano b ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
         gb=new GestoreBrani();
 
+        b=new Brano();
+
         btnInserisci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gb.addBrano(new Brano(txtTitolo.getText().toString(),
-                spnGenere.getSelectedItem().toString(), txtAutore.getText().toString(),
-                        txtDurata.getText().toString()));
+                b.setTitolo(txtTitolo.getText().toString());
+                b.setAutore(txtAutore.getText().toString());
+                b.setDurata(txtDurata.getText().toString());
+                b.setGenere(spnGenere.getSelectedItem().toString());
+                gb.addBrano(b);
             }
 
         });
@@ -46,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         btnMostra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent in = new Intent(getApplicationContext(), MainActivity2.class);
+                in.putExtra("musica",gb.toString(b));
+                startActivity(in);
 
             }
         });

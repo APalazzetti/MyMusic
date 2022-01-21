@@ -10,4 +10,7 @@ public class GestoreBrani {
     public void addBrano(Brano b){
         listaBrani.add(b);
     }
+    public String toString(Brano b){
+        return b.getTitolo()+" "+b.getAutore()+" "+b.getDurata()+" "+b.getGenere();
+    }
 }

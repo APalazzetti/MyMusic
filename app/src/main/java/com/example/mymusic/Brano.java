@@ -11,7 +11,7 @@ public class Brano {
     private String durata;
     private String datapu;
 
-    public Brano(String titolo, String genere, String autore, String durata){
+    public Brano(){
         this.titolo =titolo;
         this.genere =genere;
         this.autore =autore;
