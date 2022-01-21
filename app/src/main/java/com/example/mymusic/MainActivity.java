@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,12 +41,14 @@ public class MainActivity extends AppCompatActivity {
         btnInserisci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String testo= "brano creato";
                 b=new Brano();
                 b.setTitolo(txtTitolo.getText().toString());
                 b.setAutore(txtAutore.getText().toString());
                 b.setDurata(txtDurata.getText().toString());
                 b.setGenere(spnGenere.getSelectedItem().toString());
                 gb.addBrano(b);
+                 Toast.makeText(getApplicationContext(),testo,Toast.LENGTH_LONG).show();
             }
 
         });
