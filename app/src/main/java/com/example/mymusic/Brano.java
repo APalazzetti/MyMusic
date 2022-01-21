@@ -55,4 +55,5 @@ public class Brano {
     public void setDatapu(String datapu) {
         this.datapu = datapu;
     }
+
 }

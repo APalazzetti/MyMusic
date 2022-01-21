@@ -35,11 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
         gb=new GestoreBrani();
 
-        b=new Brano();
+
 
         btnInserisci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                b=new Brano();
                 b.setTitolo(txtTitolo.getText().toString());
                 b.setAutore(txtAutore.getText().toString());
                 b.setDurata(txtDurata.getText().toString());
@@ -52,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
         btnMostra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String lista = gb.listaBran();
                 Intent in = new Intent(getApplicationContext(), MainActivity2.class);
-                in.putExtra("musica",gb.toString(b));
+                in.putExtra("musica",lista);
                 startActivity(in);
 
             }
